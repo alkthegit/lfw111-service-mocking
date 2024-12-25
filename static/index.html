@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super cool app from linux foundatin Node.js course</title>
+    <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button id="fetch">Fetch Products</button>
+    </nav>
+    <hr />
+
+    <div id="products" class=""products>
+    </div>
+
+    <template id="product-item">
+        <style>
+            .product-item {
+                font-size: 1.5rem;
+            }
+            .product-item__summary{
+                cursor: pointer;
+            }
+            .product-item__info{
+                text-indent: 1.5rem;
+            }
+        </style>
+        <details class="product-item">
+            <summary class="product-item__summary">
+                (<slot name="id"></slot>)&nbsp;<strong><slot name="name"></slot></strong> - <em><slot name="rrp"></slot></em>
+            </summary>
+            <p class="product-item__info"><slot name="info"></slot></p>
+        </details>
+    </template>
+</body>
+</html>
